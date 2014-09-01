@@ -117,7 +117,11 @@
     
     NSDate* date = [NSDate dateWithTimeIntervalSince1970:[[scoreEntry objectForKey:@"OCCURED"] floatValue]];
     
-    [[cell detailTextLabel]setText:[date description]];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"dd, MMM ,yyyy"];
+    
+    
+    [[cell detailTextLabel]setText:[NSString stringWithFormat:@"%@ : %@",@"Achieved on",[format stringFromDate:date]]];
     
     
     return cell;
