@@ -11,6 +11,7 @@
 		04108ADC19B46CC800FFD029 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04108ADB19B46CC800FFD029 /* libsqlite3.dylib */; };
 		04108ADF19B4709800FFD029 /* GameBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04108ADE19B4709800FFD029 /* GameBoardViewController.m */; };
 		04108AE319B471DE00FFD029 /* DatabaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04108AE219B471DE00FFD029 /* DatabaseController.m */; };
+		04108AE619B476B800FFD029 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 04108AE519B476B800FFD029 /* Reachability.m */; };
 		046FFD3F19B45DF4003A5311 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046FFD3D19B45DF4003A5311 /* logo@2x.png */; };
 		046FFD4019B45DF4003A5311 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 046FFD3E19B45DF4003A5311 /* logo.png */; };
 		04A548E519B458F90050067D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A548E419B458F90050067D /* Foundation.framework */; };
@@ -82,6 +83,8 @@
 		04108ADE19B4709800FFD029 /* GameBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardViewController.m; sourceTree = "<group>"; };
 		04108AE119B471DE00FFD029 /* DatabaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseController.h; sourceTree = "<group>"; };
 		04108AE219B471DE00FFD029 /* DatabaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseController.m; sourceTree = "<group>"; };
+		04108AE419B476B800FFD029 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		04108AE519B476B800FFD029 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		046FFD3D19B45DF4003A5311 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		046FFD3E19B45DF4003A5311 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		04A548E119B458F90050067D /* ColourMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColourMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +171,8 @@
 		04108AD719B46BFB00FFD029 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				04108AE419B476B800FFD029 /* Reachability.h */,
+				04108AE519B476B800FFD029 /* Reachability.m */,
 				04108AD819B46C0A00FFD029 /* CONSTANTS.h */,
 				04108AD919B46C0A00FFD029 /* CONSTANTS.m */,
 			);
@@ -451,6 +456,7 @@
 				04108AE319B471DE00FFD029 /* DatabaseController.m in Sources */,
 				04A548FB19B458F90050067D /* ViewController.m in Sources */,
 				04108ADF19B4709800FFD029 /* GameBoardViewController.m in Sources */,
+				04108AE619B476B800FFD029 /* Reachability.m in Sources */,
 				04A548F519B458F90050067D /* AppDelegate.m in Sources */,
 				04A548F119B458F90050067D /* main.m in Sources */,
 				04108ADA19B46C0A00FFD029 /* CONSTANTS.m in Sources */,

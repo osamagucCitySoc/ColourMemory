@@ -21,6 +21,8 @@
     DatabaseController* db = [[DatabaseController alloc]init];
     [db createDatabaseIfNotExists];
     
+    [db syncLocalWithOnlineDB];
+    
     return YES;
 }
 
