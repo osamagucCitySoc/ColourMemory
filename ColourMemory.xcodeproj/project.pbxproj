@@ -65,6 +65,7 @@
 		04F1A49519B4D85700B851E6 /* Check-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A49419B4D85700B851E6 /* Check-icon.png */; };
 		04F1A49819B4D8A500B851E6 /* OLGhostAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A49619B4D8A500B851E6 /* OLGhostAlertView.m */; };
 		04F1A49B19B4D8B600B851E6 /* TakeUserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A49A19B4D8B600B851E6 /* TakeUserNameViewController.m */; };
+		04F1A49E19B4E52300B851E6 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A49D19B4E52300B851E6 /* CustomNavigationController.m */; };
 		04FE77C419B491EF00C3310E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FE77C319B491EF00C3310E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -147,6 +148,8 @@
 		04F1A49719B4D8A500B851E6 /* OLGhostAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLGhostAlertView.h; sourceTree = "<group>"; };
 		04F1A49919B4D8B600B851E6 /* TakeUserNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeUserNameViewController.h; sourceTree = "<group>"; };
 		04F1A49A19B4D8B600B851E6 /* TakeUserNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeUserNameViewController.m; sourceTree = "<group>"; };
+		04F1A49C19B4E52300B851E6 /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
+		04F1A49D19B4E52300B851E6 /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
 		04FE77C319B491EF00C3310E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -179,6 +182,8 @@
 		04108AD719B46BFB00FFD029 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				04F1A49C19B4E52300B851E6 /* CustomNavigationController.h */,
+				04F1A49D19B4E52300B851E6 /* CustomNavigationController.m */,
 				04F1A49619B4D8A500B851E6 /* OLGhostAlertView.m */,
 				04F1A49719B4D8A500B851E6 /* OLGhostAlertView.h */,
 				04108AE419B476B800FFD029 /* Reachability.h */,
@@ -467,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04108AE319B471DE00FFD029 /* DatabaseController.m in Sources */,
+				04F1A49E19B4E52300B851E6 /* CustomNavigationController.m in Sources */,
 				04108ADF19B4709800FFD029 /* GameBoardViewController.m in Sources */,
 				04108AE619B476B800FFD029 /* Reachability.m in Sources */,
 				04F1A49B19B4D8B600B851E6 /* TakeUserNameViewController.m in Sources */,

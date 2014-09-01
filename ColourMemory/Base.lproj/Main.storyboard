@@ -136,10 +136,10 @@
             </objects>
             <point key="canvasLocation" x="683" y="1318"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="RWv-zo-3er">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Phf-ME-ekE" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Phf-ME-ekE" customClass="CustomNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="F8T-qc-yGr">
