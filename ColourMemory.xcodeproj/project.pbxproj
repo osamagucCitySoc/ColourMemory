@@ -66,6 +66,7 @@
 		04F1A49819B4D8A500B851E6 /* OLGhostAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A49619B4D8A500B851E6 /* OLGhostAlertView.m */; };
 		04F1A49B19B4D8B600B851E6 /* TakeUserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A49A19B4D8B600B851E6 /* TakeUserNameViewController.m */; };
 		04F1A49E19B4E52300B851E6 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A49D19B4E52300B851E6 /* CustomNavigationController.m */; };
+		04F1A4A119B4E67A00B851E6 /* HighScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A4A019B4E67A00B851E6 /* HighScoreTableViewController.m */; };
 		04FE77C419B491EF00C3310E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FE77C319B491EF00C3310E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +151,8 @@
 		04F1A49A19B4D8B600B851E6 /* TakeUserNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeUserNameViewController.m; sourceTree = "<group>"; };
 		04F1A49C19B4E52300B851E6 /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
 		04F1A49D19B4E52300B851E6 /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
+		04F1A49F19B4E67A00B851E6 /* HighScoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreTableViewController.h; sourceTree = "<group>"; };
+		04F1A4A019B4E67A00B851E6 /* HighScoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreTableViewController.m; sourceTree = "<group>"; };
 		04FE77C319B491EF00C3310E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -250,6 +253,8 @@
 				04108ADE19B4709800FFD029 /* GameBoardViewController.m */,
 				04F1A49919B4D8B600B851E6 /* TakeUserNameViewController.h */,
 				04F1A49A19B4D8B600B851E6 /* TakeUserNameViewController.m */,
+				04F1A49F19B4E67A00B851E6 /* HighScoreTableViewController.h */,
+				04F1A4A019B4E67A00B851E6 /* HighScoreTableViewController.m */,
 			);
 			path = ColourMemory;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 				04108AE619B476B800FFD029 /* Reachability.m in Sources */,
 				04F1A49B19B4D8B600B851E6 /* TakeUserNameViewController.m in Sources */,
 				04A548F519B458F90050067D /* AppDelegate.m in Sources */,
+				04F1A4A119B4E67A00B851E6 /* HighScoreTableViewController.m in Sources */,
 				04A548F119B458F90050067D /* main.m in Sources */,
 				04108ADA19B46C0A00FFD029 /* CONSTANTS.m in Sources */,
 				04F1A49819B4D8A500B851E6 /* OLGhostAlertView.m in Sources */,

@@ -37,7 +37,7 @@
             char *errMsg;
             // creating the all jobs table
             const char *sql_stmt =
-            "CREATE TABLE IF NOT EXISTS SCORES (ID INTEGER PRIMARY KEY , USER TEXT, SCORE INTEGER, OCCURED INTEGER NOT NULL DEFAULT CURRENT_TIMESTAMP,GLOBALRANK INTEGER DEFAULT -1)";
+            "CREATE TABLE IF NOT EXISTS SCORES (ID INTEGER PRIMARY KEY , USER TEXT, SCORE INTEGER, OCCURED DOUBLE,GLOBALRANK INTEGER DEFAULT -1)";
             
             if (sqlite3_exec(localScoresDB, sql_stmt, NULL, NULL, &errMsg) == SQLITE_OK)
             {
@@ -83,9 +83,9 @@
         NSString* storedUserName = [[NSUserDefaults standardUserDefaults]objectForKey:@STORREDUSERNAME];
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"INSERT INTO SCORES (USER, SCORE) VALUES (\"%@\", \"%i\")",
+                               @"INSERT INTO SCORES (USER, SCORE,OCCURED) VALUES (\"%@\", \"%i\",\"%f\")",
                                storedUserName,
-                               score];
+                               score,[[NSDate date]timeIntervalSince1970]];
         
         const char *insert_stmt = [insertSQL UTF8String];
         const char *errMsg;
@@ -166,7 +166,7 @@
     
     if (sqlite3_open(dbpath, &localScoresDB) == SQLITE_OK)
     {
-        NSString *querySQL =  @"SELECT ID,USER,SCORE FROM SCORES ORDER BY SCORE DESC LIMIT 10;";
+        NSString *querySQL =  @"SELECT ID,USER,SCORE,GLOBALRANK,OCCURED FROM SCORES ORDER BY SCORE DESC LIMIT 10;";
         
         const char *query_stmt = [querySQL UTF8String];
         
@@ -186,7 +186,12 @@
                 
                 NSNumber* SCORE =  [NSNumber numberWithInt:sqlite3_column_int(statement, 2)];
                 
-                NSDictionary* scoreEntry = [[NSDictionary alloc]initWithObjects:@[ID,USER,SCORE] forKeys:@[@"ID",@"USER",@"SCORE"]];
+                NSNumber* GLOBALRANK =  [NSNumber numberWithInt:sqlite3_column_int(statement, 3)];
+                
+                
+                NSNumber* OCCURED =  [NSNumber numberWithInt:sqlite3_column_double(statement, 4)];
+                
+                NSDictionary* scoreEntry = [[NSDictionary alloc]initWithObjects:@[ID,USER,SCORE,GLOBALRANK,OCCURED] forKeys:@[@"ID",@"USER",@"SCORE",@"GLOBALRANK",@"OCCURED"]];
                 
                 [topTenScores addObject:scoreEntry];
                 
