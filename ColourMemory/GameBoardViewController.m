@@ -85,15 +85,18 @@
     }
     
     
-    while(randomFilledArray.count<16 && countArray.count>0)
+    while(randomFilledArray.count<16)
     {
-        int randNum = arc4random() % (countArray.count-1);
+        int randNum = arc4random() % (countArray.count);
         [randomFilledArray addObject:[allAvailbleDataArray objectAtIndex:randNum]];
         int increaseCount = [[countArray objectAtIndex:randNum] intValue]+1;
         if(increaseCount>=2)
         {
             [allAvailbleDataArray removeObjectAtIndex:randNum];
             [countArray removeObjectAtIndex:randNum];
+        }else
+        {
+            [countArray replaceObjectAtIndex:randNum withObject:[NSString stringWithFormat:@"%i",increaseCount]];
         }
     }
     [self.collectionView reloadData];
