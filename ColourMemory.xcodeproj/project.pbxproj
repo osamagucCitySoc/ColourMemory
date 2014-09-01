@@ -62,6 +62,7 @@
 		04A5496C19B45CAB0050067D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A5496919B45CAB0050067D /* Default.png */; };
 		04A5496D19B45CAB0050067D /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A5496A19B45CAB0050067D /* Default~iphone.png */; };
 		04A5496E19B45CAB0050067D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A5496B19B45CAB0050067D /* Default-568h@2x.png */; };
+		04B27D2E19B50FDF00BCAD01 /* accedo Task Activity Diagram.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B27D2D19B50FDF00BCAD01 /* accedo Task Activity Diagram.png */; };
 		04F1A49519B4D85700B851E6 /* Check-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A49419B4D85700B851E6 /* Check-icon.png */; };
 		04F1A49819B4D8A500B851E6 /* OLGhostAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A49619B4D8A500B851E6 /* OLGhostAlertView.m */; };
 		04F1A49B19B4D8B600B851E6 /* TakeUserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A49A19B4D8B600B851E6 /* TakeUserNameViewController.m */; };
@@ -144,6 +145,7 @@
 		04A5496919B45CAB0050067D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		04A5496A19B45CAB0050067D /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
 		04A5496B19B45CAB0050067D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		04B27D2D19B50FDF00BCAD01 /* accedo Task Activity Diagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "accedo Task Activity Diagram.png"; sourceTree = "<group>"; };
 		04F1A49419B4D85700B851E6 /* Check-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Check-icon.png"; sourceTree = "<group>"; };
 		04F1A49619B4D8A500B851E6 /* OLGhostAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLGhostAlertView.m; sourceTree = "<group>"; };
 		04F1A49719B4D8A500B851E6 /* OLGhostAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLGhostAlertView.h; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 		04A5491919B459C20050067D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				04B27D2D19B50FDF00BCAD01 /* accedo Task Activity Diagram.png */,
 				04F1A49419B4D85700B851E6 /* Check-icon.png */,
 				04A5496F19B45CCA0050067D /* Icons */,
 				04A5492C19B459D80050067D /* card_bg.png */,
@@ -447,6 +450,7 @@
 				04A5496619B45C060050067D /* Icon-Small@2x.png in Resources */,
 				04A5493519B459D80050067D /* card_bg.png in Resources */,
 				04A5493C19B459D80050067D /* colour7.png in Resources */,
+				04B27D2E19B50FDF00BCAD01 /* accedo Task Activity Diagram.png in Resources */,
 				04A548F819B458F90050067D /* Main.storyboard in Resources */,
 				04A5492519B459D10050067D /* colour2@2x.png in Resources */,
 				04A5492819B459D10050067D /* colour5@2x.png in Resources */,
