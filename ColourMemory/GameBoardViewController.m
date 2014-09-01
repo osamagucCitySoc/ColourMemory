@@ -253,6 +253,7 @@
     
     if(secondOpenedCard == nil)
     {//second to open a card
+        [self.collectionView setUserInteractionEnabled:NO];
         secondOpenedCard = indexPath;
         [UIView transitionWithView:imageView
                           duration:0.4
@@ -261,11 +262,67 @@
                             imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@%@",@"colour",[randomFilledArray objectAtIndex:indexPath.row],@".png"]];
                         } completion:^(BOOL finished) {
                             [self startAnimation:cell];
+                            // need to check for a match and act accordingly
+                            if([[randomFilledArray objectAtIndex:firstOpenedCard.row]isEqualToString:[randomFilledArray objectAtIndex:secondOpenedCard.row]])
+                            {
+                                score+=2;
+                                [self updateScoreLabel];
+                                [self performSelector:@selector(makeTheTwoMatchedUnClickable) withObject:nil afterDelay:1];
+                            }else
+                            {
+                                score--;
+                                [self updateScoreLabel];
+                                [self performSelector:@selector(unFlipTheNonMatched) withObject:nil afterDelay:1];
+                            }
                         }];
         return;
     }
 }
 
+
+-(void)makeTheTwoMatchedUnClickable
+{
+    UICollectionViewCell* cell = [self.collectionView cellForItemAtIndexPath:firstOpenedCard];
+    [self stopAnimation:cell];
+    [cell setUserInteractionEnabled:NO];
+    UICollectionViewCell* cell2 = [self.collectionView cellForItemAtIndexPath:secondOpenedCard];
+    [self stopAnimation:cell2];
+    [cell2 setUserInteractionEnabled:NO];
+    
+    firstOpenedCard = nil;
+    secondOpenedCard = nil;
+    [self.collectionView setUserInteractionEnabled:YES];
+}
+
+-(void)unFlipTheNonMatched
+{
+    UICollectionViewCell* cell = [self.collectionView cellForItemAtIndexPath:firstOpenedCard];
+    UIImageView* imageView = (UIImageView*)[cell viewWithTag:1];
+    [UIView transitionWithView:imageView
+                      duration:0.4
+                       options:UIViewAnimationOptionTransitionFlipFromRight
+                    animations:^{
+                        imageView.image = [UIImage imageNamed:@"card_bg.png"];
+                    } completion:^(BOOL finished) {
+                        [self stopAnimation:cell];
+                    }];
+    
+    UICollectionViewCell* cell2 = [self.collectionView cellForItemAtIndexPath:secondOpenedCard];
+    UIImageView* imageView2 = (UIImageView*)[cell2 viewWithTag:1];
+    [UIView transitionWithView:imageView2
+                      duration:0.4
+                       options:UIViewAnimationOptionTransitionFlipFromRight
+                    animations:^{
+                        imageView2.image = [UIImage imageNamed:@"card_bg.png"];
+                    } completion:^(BOOL finished) {
+                        [self stopAnimation:cell2];
+                    }];
+
+    
+    firstOpenedCard = nil;
+    secondOpenedCard = nil;
+    [self.collectionView setUserInteractionEnabled:YES];
+}
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
