@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04108ADA19B46C0A00FFD029 /* CONSTANTS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04108AD919B46C0A00FFD029 /* CONSTANTS.m */; };
+		046FFD3F19B45DF4003A5311 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046FFD3D19B45DF4003A5311 /* logo@2x.png */; };
+		046FFD4019B45DF4003A5311 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 046FFD3E19B45DF4003A5311 /* logo.png */; };
 		04A548E519B458F90050067D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A548E419B458F90050067D /* Foundation.framework */; };
 		04A548E719B458F90050067D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A548E619B458F90050067D /* CoreGraphics.framework */; };
 		04A548E919B458F90050067D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A548E819B458F90050067D /* UIKit.framework */; };
@@ -69,6 +72,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04108AD819B46C0A00FFD029 /* CONSTANTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONSTANTS.h; sourceTree = "<group>"; };
+		04108AD919B46C0A00FFD029 /* CONSTANTS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONSTANTS.m; sourceTree = "<group>"; };
+		046FFD3D19B45DF4003A5311 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		046FFD3E19B45DF4003A5311 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		04A548E119B458F90050067D /* ColourMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColourMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A548E419B458F90050067D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		04A548E619B458F90050067D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -149,6 +156,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04108AD719B46BFB00FFD029 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				04108AD819B46C0A00FFD029 /* CONSTANTS.h */,
+				04108AD919B46C0A00FFD029 /* CONSTANTS.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		04A548D819B458F90050067D = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +198,7 @@
 		04A548EA19B458F90050067D /* ColourMemory */ = {
 			isa = PBXGroup;
 			children = (
+				04108AD719B46BFB00FFD029 /* Utils */,
 				04A5491919B459C20050067D /* Assets */,
 				04A548F319B458F90050067D /* AppDelegate.h */,
 				04A548F419B458F90050067D /* AppDelegate.m */,
@@ -245,6 +262,8 @@
 				04A5492019B459D10050067D /* colour6@2x.png */,
 				04A5492119B459D10050067D /* colour7@2x.png */,
 				04A5492219B459D10050067D /* colour8@2x.png */,
+				046FFD3D19B45DF4003A5311 /* logo@2x.png */,
+				046FFD3E19B45DF4003A5311 /* logo.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -350,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A5496719B45C060050067D /* Icon.png in Resources */,
+				046FFD3F19B45DF4003A5311 /* logo@2x.png in Resources */,
 				04A5493D19B459D80050067D /* colour8.png in Resources */,
 				04A5492619B459D10050067D /* colour3@2x.png in Resources */,
 				04A5496019B45C060050067D /* Icon-72@2x.png in Resources */,
@@ -384,6 +404,7 @@
 				04A5493919B459D80050067D /* colour4.png in Resources */,
 				04A5496E19B45CAB0050067D /* Default-568h@2x.png in Resources */,
 				04A5496419B45C060050067D /* Icon-Small-50@2x.png in Resources */,
+				046FFD4019B45DF4003A5311 /* logo.png in Resources */,
 				04A5496319B45C060050067D /* Icon-Small-50.png in Resources */,
 				04A5495B19B45C060050067D /* Icon-40.png in Resources */,
 				04A5492B19B459D10050067D /* colour8@2x.png in Resources */,
@@ -408,6 +429,7 @@
 				04A548FB19B458F90050067D /* ViewController.m in Sources */,
 				04A548F519B458F90050067D /* AppDelegate.m in Sources */,
 				04A548F119B458F90050067D /* main.m in Sources */,
+				04108ADA19B46C0A00FFD029 /* CONSTANTS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +632,7 @@
 				04A5491519B458F90050067D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04A5491619B458F90050067D /* Build configuration list for PBXNativeTarget "ColourMemoryTests" */ = {
 			isa = XCConfigurationList;
@@ -618,6 +641,7 @@
 				04A5491819B458F90050067D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
