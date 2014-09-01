@@ -10,6 +10,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "QuartzCore/CALayer.h"
 
-@interface GameBoardViewController : UICollectionViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface GameBoardViewController : UICollectionViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIAlertViewDelegate>
 
 @end

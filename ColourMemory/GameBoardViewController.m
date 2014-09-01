@@ -33,6 +33,7 @@
      **/
     UILabel * scoreLabel;
     int score;
+    int matchedAlready;
 }
 
 #define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
@@ -57,6 +58,7 @@
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind: UICollectionElementKindSectionHeader withReuseIdentifier:@"headerSection"];
 
     
+
     // initializing the board
     [self randomizeTheBoard];
     
@@ -70,6 +72,7 @@
 -(void)randomizeTheBoard
 {
     score = 0;
+    matchedAlready = 0;
     
     firstOpenedCard = nil;
     secondOpenedCard = nil;
@@ -129,6 +132,7 @@
     
     UICollectionViewCell* cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
     
+    ((UIImageView*)[cell viewWithTag:1]).image = [UIImage imageNamed:@"card_bg.png"];
     [(UIImageView*)[cell viewWithTag:1] setAlpha:0.0f];
     
     
@@ -143,6 +147,9 @@
     cell.layer.shadowOpacity = 1;
     cell.layer.shadowRadius = 5.0;
     cell.layer.cornerRadius = 20.0f;
+    
+    
+    [cell setUserInteractionEnabled:YES];
     
     return cell;
     
@@ -285,6 +292,8 @@
 
 -(void)makeTheTwoMatchedUnClickable
 {
+    matchedAlready++;
+    
     UICollectionViewCell* cell = [self.collectionView cellForItemAtIndexPath:firstOpenedCard];
     [self stopAnimation:cell];
     [cell setUserInteractionEnabled:NO];
@@ -295,6 +304,13 @@
     firstOpenedCard = nil;
     secondOpenedCard = nil;
     [self.collectionView setUserInteractionEnabled:YES];
+    
+    if(matchedAlready >=8)
+    {
+        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Congraaats.." message:@"You have a solid memory. Amazing person.." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert setTag:1];
+        [alert show];
+    }
 }
 
 -(void)unFlipTheNonMatched
@@ -348,6 +364,15 @@
         return reusableview;
     }
     return nil;
+}
+
+#pragma mark alert delegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(alertView.tag == 1)
+    {
+        [self randomizeTheBoard];
+    }
 }
 
 
