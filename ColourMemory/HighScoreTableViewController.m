@@ -113,8 +113,21 @@
     [[cell textLabel]setTextColor:[UIColor whiteColor]];
     [[cell detailTextLabel]setTextColor:[UIColor yellowColor]];
     
-    [[cell textLabel]setText:[NSString stringWithFormat:@"%@ : %i - %@ : %i",@"Score",[[scoreEntry objectForKey:@"SCORE"] intValue],@"Globally Ranked",[[scoreEntry objectForKey:@"GLOBALRANK"] intValue]]];
     
+    NSString* globallyRankingString = @"";
+    if([[scoreEntry objectForKey:@"GLOBALRANK"] intValue] < 0)
+    {
+        globallyRankingString = @"NA, connect & pull to refresh";
+    }else
+    {
+        globallyRankingString = [NSString stringWithFormat:@"%i",[[scoreEntry objectForKey:@"GLOBALRANK"] intValue]];
+    }
+    
+    [[cell textLabel]setText:[NSString stringWithFormat:@"%@ : %i - %@ : %@",@"Score",[[scoreEntry objectForKey:@"SCORE"] intValue],@"Globally Ranked",globallyRankingString]];
+    [[cell textLabel]setMinimumScaleFactor:0.25];
+    [[cell textLabel]setNumberOfLines:2];
+    [[cell textLabel] sizeToFit];
+    [[cell textLabel] setNeedsDisplay];
     NSDate* date = [NSDate dateWithTimeIntervalSince1970:[[scoreEntry objectForKey:@"OCCURED"] floatValue]];
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
@@ -127,6 +140,10 @@
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
 
 - (IBAction)backPressed:(id)sender {
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;

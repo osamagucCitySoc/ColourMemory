@@ -51,7 +51,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Colour Memory" id="pnx-Li-A7y">
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" style="plain" id="tC9-xS-bp9">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" id="tC9-xS-bp9">
                             <view key="customView" contentMode="scaleToFill" id="iH5-r6-d1N">
                                 <rect key="frame" x="16" y="5" width="71" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -66,7 +66,7 @@
                             </view>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="9F0-X4-8ZK">
+                        <barButtonItem key="rightBarButtonItem" id="9F0-X4-8ZK">
                             <view key="customView" contentMode="scaleToFill" id="PMG-KC-y4R">
                                 <rect key="frame" x="233" y="5" width="71" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -118,6 +118,7 @@
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JZa-WT-ksD">
                                             <rect key="frame" x="15" y="3" width="34" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -125,12 +126,14 @@
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iR3-jX-wG3">
                                             <rect key="frame" x="15" y="25" width="32" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -140,7 +143,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="My Scores High" id="VPN-SU-Oep">
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" style="plain" id="mJp-fF-hc3">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" id="mJp-fF-hc3">
                             <view key="customView" contentMode="scaleToFill" id="bkM-BO-oPy">
                                 <rect key="frame" x="16" y="5" width="71" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -155,7 +158,7 @@
                             </view>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="IYC-6c-0LC">
+                        <barButtonItem key="rightBarButtonItem" id="IYC-6c-0LC">
                             <view key="customView" contentMode="scaleToFill" id="aBh-ip-Xd9">
                                 <rect key="frame" x="233" y="5" width="71" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
