@@ -7,7 +7,8 @@
 //
 
 #import "GameBoardViewController.h"
-
+#import "DatabaseController.h"
+#import "CONSTANTS.h"
 @interface GameBoardViewController ()
 
 @end
@@ -34,6 +35,11 @@
     UILabel * scoreLabel;
     int score;
     int matchedAlready;
+    
+    DatabaseController* db; // to be used as interface to database operations.
+    
+    
+ 
 }
 
 #define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
@@ -57,11 +63,22 @@
         
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind: UICollectionElementKindSectionHeader withReuseIdentifier:@"headerSection"];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(storeScore:)
+                                                 name:@FINISHED_USERNAME_NOTIFICATION_NAME
+                                               object:nil];
     
+    db = [[DatabaseController alloc]init];
 
     // initializing the board
     [self randomizeTheBoard];
-    
+}
+
+
+-(void)storeScore:(id)sender
+{
+    [db insertNewScoredRecord:score];
+    [self randomizeTheBoard];
 }
 
 /**
@@ -155,6 +172,9 @@
     
 }
 
+/**
+ This method is used to shake the currently opened card to catch the user's eye.
+ **/
 -(void)startAnimation:(UICollectionViewCell*)lockView
 {
     [UIView beginAnimations:nil context:NULL];
@@ -168,6 +188,9 @@
     
 }
 
+/**
+ This method is used to stop the shaking animation on the card when it is reclosed.
+ **/
 -(void)stopAnimation:(UICollectionViewCell*)lockView
 {
     [lockView.layer removeAllAnimations];
@@ -371,7 +394,16 @@
 {
     if(alertView.tag == 1)
     {
-        [self randomizeTheBoard];
+        // check if the username is already stored, then store the new score locally.
+        // otherwise, first take the username.
+        if(![[NSUserDefaults standardUserDefaults] objectForKey:@STORREDUSERNAME])
+        {
+            [self performSegueWithIdentifier:@"takeNameSeg" sender:self];
+        }else
+        {
+            [self storeScore:nil];
+            [self randomizeTheBoard];
+        }
     }
 }
 

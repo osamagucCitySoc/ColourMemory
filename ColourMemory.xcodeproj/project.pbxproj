@@ -62,6 +62,9 @@
 		04A5496C19B45CAB0050067D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A5496919B45CAB0050067D /* Default.png */; };
 		04A5496D19B45CAB0050067D /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A5496A19B45CAB0050067D /* Default~iphone.png */; };
 		04A5496E19B45CAB0050067D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A5496B19B45CAB0050067D /* Default-568h@2x.png */; };
+		04F1A49519B4D85700B851E6 /* Check-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A49419B4D85700B851E6 /* Check-icon.png */; };
+		04F1A49819B4D8A500B851E6 /* OLGhostAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A49619B4D8A500B851E6 /* OLGhostAlertView.m */; };
+		04F1A49B19B4D8B600B851E6 /* TakeUserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1A49A19B4D8B600B851E6 /* TakeUserNameViewController.m */; };
 		04FE77C419B491EF00C3310E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FE77C319B491EF00C3310E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +142,11 @@
 		04A5496919B45CAB0050067D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		04A5496A19B45CAB0050067D /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
 		04A5496B19B45CAB0050067D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		04F1A49419B4D85700B851E6 /* Check-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Check-icon.png"; sourceTree = "<group>"; };
+		04F1A49619B4D8A500B851E6 /* OLGhostAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLGhostAlertView.m; sourceTree = "<group>"; };
+		04F1A49719B4D8A500B851E6 /* OLGhostAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLGhostAlertView.h; sourceTree = "<group>"; };
+		04F1A49919B4D8B600B851E6 /* TakeUserNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeUserNameViewController.h; sourceTree = "<group>"; };
+		04F1A49A19B4D8B600B851E6 /* TakeUserNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeUserNameViewController.m; sourceTree = "<group>"; };
 		04FE77C319B491EF00C3310E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -171,6 +179,8 @@
 		04108AD719B46BFB00FFD029 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				04F1A49619B4D8A500B851E6 /* OLGhostAlertView.m */,
+				04F1A49719B4D8A500B851E6 /* OLGhostAlertView.h */,
 				04108AE419B476B800FFD029 /* Reachability.h */,
 				04108AE519B476B800FFD029 /* Reachability.m */,
 				04108AD819B46C0A00FFD029 /* CONSTANTS.h */,
@@ -233,6 +243,8 @@
 				04A548EB19B458F90050067D /* Supporting Files */,
 				04108ADD19B4709800FFD029 /* GameBoardViewController.h */,
 				04108ADE19B4709800FFD029 /* GameBoardViewController.m */,
+				04F1A49919B4D8B600B851E6 /* TakeUserNameViewController.h */,
+				04F1A49A19B4D8B600B851E6 /* TakeUserNameViewController.m */,
 			);
 			path = ColourMemory;
 			sourceTree = "<group>";
@@ -269,6 +281,7 @@
 		04A5491919B459C20050067D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				04F1A49419B4D85700B851E6 /* Check-icon.png */,
 				04A5496F19B45CCA0050067D /* Icons */,
 				04A5492C19B459D80050067D /* card_bg.png */,
 				04A5492D19B459D80050067D /* colour1.png */,
@@ -409,6 +422,7 @@
 				04A5493A19B459D80050067D /* colour5.png in Resources */,
 				04A5493719B459D80050067D /* colour2.png in Resources */,
 				04A5496219B45C060050067D /* Icon-76@2x.png in Resources */,
+				04F1A49519B4D85700B851E6 /* Check-icon.png in Resources */,
 				04A5495F19B45C060050067D /* Icon-72.png in Resources */,
 				04A5492719B459D10050067D /* colour4@2x.png in Resources */,
 				04A5493819B459D80050067D /* colour3.png in Resources */,
@@ -455,9 +469,11 @@
 				04108AE319B471DE00FFD029 /* DatabaseController.m in Sources */,
 				04108ADF19B4709800FFD029 /* GameBoardViewController.m in Sources */,
 				04108AE619B476B800FFD029 /* Reachability.m in Sources */,
+				04F1A49B19B4D8B600B851E6 /* TakeUserNameViewController.m in Sources */,
 				04A548F519B458F90050067D /* AppDelegate.m in Sources */,
 				04A548F119B458F90050067D /* main.m in Sources */,
 				04108ADA19B46C0A00FFD029 /* CONSTANTS.m in Sources */,
+				04F1A49819B4D8A500B851E6 /* OLGhostAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

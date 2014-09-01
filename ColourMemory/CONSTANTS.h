@@ -14,5 +14,7 @@
 #define DATABASENAME "scoreDatabase"
 #define TABLENAME "scores"
 #define STORREDUSERNAME "username"
+#define STORREDSERVERSALT "serversalt"
 #define FINISHED_UPDATING_NOTIFICATION_NAME "finishedUpdatedNotification"
+#define FINISHED_USERNAME_NOTIFICATION_NAME "finishedUserNameNotification"
 @end

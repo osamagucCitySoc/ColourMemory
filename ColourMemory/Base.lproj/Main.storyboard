@@ -88,10 +88,53 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <segue destination="KSA-x1-06u" kind="modal" identifier="takeNameSeg" modalTransitionStyle="coverVertical" id="1IS-3o-ksp"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gps-h6-4Oh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="683" y="465"/>
+        </scene>
+        <!--Take User Name View Controller-->
+        <scene sceneID="hjR-HM-JjD">
+            <objects>
+                <viewController id="KSA-x1-06u" customClass="TakeUserNameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NP1-Mw-JzS"/>
+                        <viewControllerLayoutGuide type="bottom" id="2g2-kT-NJB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jua-4f-9b3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CRz-xA-ySQ">
+                                <rect key="frame" x="20" y="92" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.91218065690000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMc-I6-j21">
+                                <rect key="frame" x="112" y="130" width="96" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Check-icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitPressed:" destination="KSA-x1-06u" eventType="touchUpInside" id="EQm-Rz-nHA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96604020499999999" green="0.98240194520000002" blue="0.94776263689999996" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="takeUserNameTextField" destination="CRz-xA-ySQ" id="8TN-hO-bAy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kLP-Eu-YnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="683" y="1318"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RWv-zo-3er">
@@ -114,6 +157,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Check-icon.png" width="96" height="96"/>
         <image name="card_bg.png" width="152" height="190"/>
         <image name="logo.png" width="267" height="107"/>
     </resources>

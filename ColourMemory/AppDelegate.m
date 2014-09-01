@@ -17,8 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    
     // have to make sure, database is already stored and ready to go.
     DatabaseController* db = [[DatabaseController alloc]init];
     [db createDatabaseIfNotExists];
