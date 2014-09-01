@@ -27,6 +27,12 @@
      **/
     NSIndexPath* firstOpenedCard;
     NSIndexPath* secondOpenedCard;
+    
+    /**
+     Those are to hold and show the score.
+     **/
+    UILabel * scoreLabel;
+    int score;
 }
 
 #define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
@@ -47,12 +53,23 @@
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
+        
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind: UICollectionElementKindSectionHeader withReuseIdentifier:@"headerSection"];
+
     
+    // initializing the board
     [self randomizeTheBoard];
+    
 }
+
+/**
+ This method is for randomizing the board at the beginning of the game.
+ I have implemented a quick tricky algorithm based on the "Index Sort".
+ **/
 
 -(void)randomizeTheBoard
 {
+    score = 0;
     
     firstOpenedCard = nil;
     secondOpenedCard = nil;
@@ -79,8 +96,15 @@
             [countArray removeObjectAtIndex:randNum];
         }
     }
-    //NSLog(@"%@",randomFilledArray);
     [self.collectionView reloadData];
+}
+/**
+ This method is for updating the score label whenver needed.
+ **/
+-(void)updateScoreLabel
+{
+    [scoreLabel setText:[NSString stringWithFormat:@"%@ : %i",@"Your Score Is",score]];
+    [scoreLabel setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,7 +147,6 @@
 
 -(void)startAnimation:(UICollectionViewCell*)lockView
 {
-    
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.1f];
     [UIView setAnimationRepeatAutoreverses:YES];
@@ -135,6 +158,19 @@
     
 }
 
+-(void)stopAnimation:(UICollectionViewCell*)lockView
+{
+    [lockView.layer removeAllAnimations];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.1f];
+    [UIView setAnimationRepeatCount:1];
+    CGAffineTransform transform =
+    CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(0));
+    lockView.transform = transform;
+    [UIView commitAnimations];
+
+}
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;
@@ -142,7 +178,7 @@
 
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGSize retval =  CGSizeMake(70, 90);
+    CGSize retval =  CGSizeMake(70, 85);
     return retval;
 }
 
@@ -152,18 +188,107 @@
     return UIEdgeInsetsMake(10, 0, 10, 0);
 }
 
+/**
+ This is a delegate method that is being called whenever a user clicks on an item on the board. Possible paths are:
+ 1- User clicks to flip the first card. So this card is flipped and saved.
+ 2- User clicks to un-flip an oppened card. So this card is un-flipped and undo saved.
+ 3- User clicks to flip the second card. So this card is flipped and saved and compared agains the first one. If match increase coins and hide them from the board, if not decrease coins and un-flip them all.
+ **/
+
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell* cell = [self.collectionView cellForItemAtIndexPath:indexPath];
     UIImageView* imageView = (UIImageView*)[cell viewWithTag:1];
-    [UIView transitionWithView:imageView
-                      duration:0.4
-                       options:UIViewAnimationOptionTransitionFlipFromRight
-                    animations:^{
-                        imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@%@",@"colour",[randomFilledArray objectAtIndex:indexPath.row],@".png"]];
-                    } completion:^(BOOL finished) {
-                        [self startAnimation:cell];
-                    }];
+    
+    if(firstOpenedCard != nil)
+    {
+        if(firstOpenedCard == indexPath) // close opened card
+        {
+            firstOpenedCard = nil;
+            [UIView transitionWithView:imageView
+                              duration:0.4
+                               options:UIViewAnimationOptionTransitionFlipFromRight
+                            animations:^{
+                                imageView.image = [UIImage imageNamed:@"card_bg.png"];
+                            } completion:^(BOOL finished) {
+                                [self stopAnimation:cell];
+                            }];
+
+            return;
+        }
+    }
+    
+    
+    if(secondOpenedCard != nil)
+    {
+        if(secondOpenedCard == indexPath) // close opened card
+        {
+            secondOpenedCard = nil;
+            [UIView transitionWithView:imageView
+                              duration:0.4
+                               options:UIViewAnimationOptionTransitionFlipFromRight
+                            animations:^{
+                                imageView.image = [UIImage imageNamed:@"card_bg.png"];
+                            } completion:^(BOOL finished) {
+                                [self stopAnimation:cell];
+                            }];
+            
+            return;
+        }
+    }
+    
+    if(firstOpenedCard == nil)
+    {//first to open a card
+        firstOpenedCard = indexPath;
+        [UIView transitionWithView:imageView
+                          duration:0.4
+                           options:UIViewAnimationOptionTransitionFlipFromRight
+                        animations:^{
+                            imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@%@",@"colour",[randomFilledArray objectAtIndex:indexPath.row],@".png"]];
+                        } completion:^(BOOL finished) {
+                            [self startAnimation:cell];
+                        }];
+        return;
+    }
+    
+    if(secondOpenedCard == nil)
+    {//second to open a card
+        secondOpenedCard = indexPath;
+        [UIView transitionWithView:imageView
+                          duration:0.4
+                           options:UIViewAnimationOptionTransitionFlipFromRight
+                        animations:^{
+                            imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@%@",@"colour",[randomFilledArray objectAtIndex:indexPath.row],@".png"]];
+                        } completion:^(BOOL finished) {
+                            [self startAnimation:cell];
+                        }];
+        return;
+    }
 }
+
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    if (kind == UICollectionElementKindSectionHeader) {
+        
+        UICollectionReusableView *reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerSection" forIndexPath:indexPath];
+        
+        if (reusableview==nil) {
+            reusableview=[[UICollectionReusableView alloc] initWithFrame:CGRectMake(0, 0, 320, 24)];
+        }
+        [reusableview setBackgroundColor:[UIColor clearColor]];
+        [scoreLabel removeFromSuperview];
+        scoreLabel=[[UILabel alloc] initWithFrame:CGRectMake(10, 5, 300, 15)];
+        scoreLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f];
+        scoreLabel.textAlignment = NSTextAlignmentCenter;
+        [scoreLabel setBackgroundColor:[UIColor clearColor]];
+        [scoreLabel setTextColor:[UIColor whiteColor]];
+        [self updateScoreLabel];
+        [reusableview addSubview:scoreLabel];
+        return reusableview;
+    }
+    return nil;
+}
+
 
 @end
