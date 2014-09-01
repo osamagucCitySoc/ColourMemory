@@ -13,5 +13,5 @@
 #define firstTimeKey "firstTimeKey"
 #define DATABASENAME "scoreDatabase"
 #define TABLENAME "scores"
-
+#define STORREDUSERNAME "username"
 @end

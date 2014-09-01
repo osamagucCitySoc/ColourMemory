@@ -67,4 +67,38 @@
     return  [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: @DATABASENAME]];
 }
 
+
+
+/**
+ This method to be called by the controller when he wants to insert new score record locally.
+ **/
+-(void)insertNewScoredRecord:(int)score
+{
+    databasePath = [self configureDatabasePath];
+    sqlite3_stmt    *statement;
+    const char *dbpath = [databasePath UTF8String];
+    
+    if (sqlite3_open(dbpath, &localScoresDB) == SQLITE_OK)
+    {
+        NSString* storedUserName = [[NSUserDefaults standardUserDefaults]objectForKey:@STORREDUSERNAME];
+        
+        NSString *insertSQL = [NSString stringWithFormat:
+                               @"INSERT INTO SCORES (USER, SCORE) VALUES (\"%@\", \"%i\")",
+                               storedUserName,
+                               score];
+        
+        const char *insert_stmt = [insertSQL UTF8String];
+        const char *errMsg;
+        sqlite3_prepare_v2(localScoresDB, insert_stmt,
+                           -1, &statement, &errMsg);
+        if (sqlite3_step(statement) == SQLITE_DONE)
+        {
+            NSLog(@"%@",@"SCORE ADDED");
+        } else {
+            NSLog(@"%@.",@"Failed to add SCORE");
+        }
+        sqlite3_finalize(statement);
+        sqlite3_close(localScoresDB);
+    }
+}
 @end

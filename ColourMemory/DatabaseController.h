@@ -16,4 +16,9 @@
  **/
 -(void)createDatabaseIfNotExists;
 
+
+/**
+ This method to be called by the controller when he wants to insert new score record locally.
+ **/
+-(void)insertNewScoredRecord:(int)score;
 @end
