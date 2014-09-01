@@ -11,5 +11,7 @@
 @interface CONSTANTS : NSObject
 
 #define firstTimeKey "firstTimeKey"
+#define DATABASENAME "scoreDatabase"
+#define TABLENAME "scores"
 
 @end
