@@ -13,6 +13,11 @@
 @end
 
 @implementation GameBoardViewController
+{
+    NSMutableArray* countArray;
+    NSMutableArray* randomFilledArray;
+    NSMutableArray* allAvailbleDataArray;
+}
 
 #define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
 
@@ -32,6 +37,36 @@
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
+    
+    [self randomizeTheBoard];
+}
+
+-(void)randomizeTheBoard
+{
+    countArray = [[NSMutableArray alloc]init];
+    randomFilledArray = [[NSMutableArray alloc]init];
+    allAvailbleDataArray = [[NSMutableArray alloc]init];
+    
+    for(int i = 1 ; i < 9 ; i++)
+    {
+        [allAvailbleDataArray addObject:[NSString stringWithFormat:@"%i",i]];
+        [countArray addObject:@"0"];
+    }
+    
+    
+    while(randomFilledArray.count<16 && countArray.count>0)
+    {
+        int randNum = arc4random() % (countArray.count-1);
+        [randomFilledArray addObject:[allAvailbleDataArray objectAtIndex:randNum]];
+        int increaseCount = [[countArray objectAtIndex:randNum] intValue]+1;
+        if(increaseCount>=2)
+        {
+            [allAvailbleDataArray removeObjectAtIndex:randNum];
+            [countArray removeObjectAtIndex:randNum];
+        }
+    }
+    //NSLog(@"%@",randomFilledArray);
+    [self.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,7 +79,7 @@
 #pragma mark UICollectionView Delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 16;
+    return randomFilledArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -62,14 +97,11 @@
     } completion:^(BOOL finished) {
     }];
     
-    
     cell.layer.shadowColor = [UIColor whiteColor].CGColor;
     cell.layer.shadowOffset = CGSizeMake(0, 0);
     cell.layer.shadowOpacity = 1;
     cell.layer.shadowRadius = 5.0;
-    cell.clipsToBounds = NO;
-
-    //[self startAnimation:cell];
+    cell.layer.cornerRadius = 20.0f;
     
     return cell;
     
@@ -79,11 +111,11 @@
 {
     
     [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDuration:0.1f];
     [UIView setAnimationRepeatAutoreverses:YES];
     [UIView setAnimationRepeatCount:10000];
     CGAffineTransform transform =
-    CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(25));
+    CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(10));
     lockView.transform = transform;
     [UIView commitAnimations];
     
@@ -114,8 +146,10 @@
                       duration:0.4
                        options:UIViewAnimationOptionTransitionFlipFromRight
                     animations:^{
-                        imageView.image = [UIImage imageNamed:@"colour1.png"];
-                    } completion:^(BOOL finished) {}];
+                        imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@%@",@"colour",[randomFilledArray objectAtIndex:indexPath.row],@".png"]];
+                    } completion:^(BOOL finished) {
+                        [self startAnimation:cell];
+                    }];
 }
 
 @end
