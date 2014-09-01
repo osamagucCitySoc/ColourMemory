@@ -21,7 +21,6 @@
 		04A548F119B458F90050067D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A548F019B458F90050067D /* main.m */; };
 		04A548F519B458F90050067D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A548F419B458F90050067D /* AppDelegate.m */; };
 		04A548F819B458F90050067D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A548F619B458F90050067D /* Main.storyboard */; };
-		04A548FB19B458F90050067D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A548FA19B458F90050067D /* ViewController.m */; };
 		04A548FD19B458F90050067D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A548FC19B458F90050067D /* Images.xcassets */; };
 		04A5490419B458F90050067D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A5490319B458F90050067D /* XCTest.framework */; };
 		04A5490519B458F90050067D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A548E419B458F90050067D /* Foundation.framework */; };
@@ -63,6 +62,7 @@
 		04A5496C19B45CAB0050067D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A5496919B45CAB0050067D /* Default.png */; };
 		04A5496D19B45CAB0050067D /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A5496A19B45CAB0050067D /* Default~iphone.png */; };
 		04A5496E19B45CAB0050067D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A5496B19B45CAB0050067D /* Default-568h@2x.png */; };
+		04FE77C419B491EF00C3310E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FE77C319B491EF00C3310E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,8 +98,6 @@
 		04A548F319B458F90050067D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04A548F419B458F90050067D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		04A548F719B458F90050067D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		04A548F919B458F90050067D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		04A548FA19B458F90050067D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		04A548FC19B458F90050067D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		04A5490219B458F90050067D /* ColourMemoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColourMemoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A5490319B458F90050067D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -141,6 +139,7 @@
 		04A5496919B45CAB0050067D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		04A5496A19B45CAB0050067D /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
 		04A5496B19B45CAB0050067D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		04FE77C319B491EF00C3310E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04FE77C419B491EF00C3310E /* QuartzCore.framework in Frameworks */,
 				04108ADC19B46CC800FFD029 /* libsqlite3.dylib in Frameworks */,
 				04A548E719B458F90050067D /* CoreGraphics.framework in Frameworks */,
 				04A548E919B458F90050067D /* UIKit.framework in Frameworks */,
@@ -210,6 +210,7 @@
 		04A548E319B458F90050067D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04FE77C319B491EF00C3310E /* QuartzCore.framework */,
 				04108ADB19B46CC800FFD029 /* libsqlite3.dylib */,
 				04A548E419B458F90050067D /* Foundation.framework */,
 				04A548E619B458F90050067D /* CoreGraphics.framework */,
@@ -228,8 +229,6 @@
 				04A548F319B458F90050067D /* AppDelegate.h */,
 				04A548F419B458F90050067D /* AppDelegate.m */,
 				04A548F619B458F90050067D /* Main.storyboard */,
-				04A548F919B458F90050067D /* ViewController.h */,
-				04A548FA19B458F90050067D /* ViewController.m */,
 				04A548FC19B458F90050067D /* Images.xcassets */,
 				04A548EB19B458F90050067D /* Supporting Files */,
 				04108ADD19B4709800FFD029 /* GameBoardViewController.h */,
@@ -454,7 +453,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04108AE319B471DE00FFD029 /* DatabaseController.m in Sources */,
-				04A548FB19B458F90050067D /* ViewController.m in Sources */,
 				04108ADF19B4709800FFD029 /* GameBoardViewController.m in Sources */,
 				04108AE619B476B800FFD029 /* Reachability.m in Sources */,
 				04A548F519B458F90050067D /* AppDelegate.m in Sources */,
