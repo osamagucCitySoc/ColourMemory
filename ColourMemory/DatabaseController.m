@@ -99,6 +99,8 @@
         }
         sqlite3_finalize(statement);
         sqlite3_close(localScoresDB);
+        
+        [self syncLocalWithOnlineDB];
     }
 }
 
@@ -180,6 +182,7 @@
                                   initWithUTF8String:
                                   (const char *) sqlite3_column_text(
                                                                      statement, 1)];
+                USER = [USER stringByAppendingString:[[NSUserDefaults standardUserDefaults] objectForKey:@STORREDSERVERSALT]];
                 
                 NSNumber* SCORE =  [NSNumber numberWithInt:sqlite3_column_int(statement, 2)];
                 

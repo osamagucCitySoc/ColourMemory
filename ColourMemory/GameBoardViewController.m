@@ -300,12 +300,12 @@
                             {
                                 score+=2;
                                 [self updateScoreLabel];
-                                [self performSelector:@selector(makeTheTwoMatchedUnClickable) withObject:nil afterDelay:1];
+                                [self performSelector:@selector(makeTheTwoMatchedUnClickable) withObject:nil afterDelay:0.5];
                             }else
                             {
                                 score--;
                                 [self updateScoreLabel];
-                                [self performSelector:@selector(unFlipTheNonMatched) withObject:nil afterDelay:1];
+                                [self performSelector:@selector(unFlipTheNonMatched) withObject:nil afterDelay:0.5];
                             }
                         }];
         return;
