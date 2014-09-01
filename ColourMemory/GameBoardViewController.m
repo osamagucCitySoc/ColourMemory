@@ -14,9 +14,19 @@
 
 @implementation GameBoardViewController
 {
-    NSMutableArray* countArray;
-    NSMutableArray* randomFilledArray;
-    NSMutableArray* allAvailbleDataArray;
+    /**
+     Those arrays to be used in randomly filling the board.
+     The algorthim written by me is a modified concept of the "index sort" algorithm.
+     **/
+    NSMutableArray* countArray;//ith entry tells how many times allAvailbleDataArray(i) had been put on the board (0,1,2).
+    NSMutableArray* randomFilledArray;//ith entry is a random value from 1-8
+    NSMutableArray* allAvailbleDataArray;//ith entry is availbe entry from 1-8 that yet can be added to the board.
+    
+    /**
+     Index pathes are to hold the values of the cards the user flipped if any.
+     **/
+    NSIndexPath* firstOpenedCard;
+    NSIndexPath* secondOpenedCard;
 }
 
 #define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
@@ -43,6 +53,10 @@
 
 -(void)randomizeTheBoard
 {
+    
+    firstOpenedCard = nil;
+    secondOpenedCard = nil;
+    
     countArray = [[NSMutableArray alloc]init];
     randomFilledArray = [[NSMutableArray alloc]init];
     allAvailbleDataArray = [[NSMutableArray alloc]init];
