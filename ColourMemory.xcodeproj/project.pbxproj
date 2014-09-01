@@ -10,6 +10,7 @@
 		04108ADA19B46C0A00FFD029 /* CONSTANTS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04108AD919B46C0A00FFD029 /* CONSTANTS.m */; };
 		04108ADC19B46CC800FFD029 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04108ADB19B46CC800FFD029 /* libsqlite3.dylib */; };
 		04108ADF19B4709800FFD029 /* GameBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04108ADE19B4709800FFD029 /* GameBoardViewController.m */; };
+		04108AE319B471DE00FFD029 /* DatabaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04108AE219B471DE00FFD029 /* DatabaseController.m */; };
 		046FFD3F19B45DF4003A5311 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046FFD3D19B45DF4003A5311 /* logo@2x.png */; };
 		046FFD4019B45DF4003A5311 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 046FFD3E19B45DF4003A5311 /* logo.png */; };
 		04A548E519B458F90050067D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A548E419B458F90050067D /* Foundation.framework */; };
@@ -79,6 +80,8 @@
 		04108ADB19B46CC800FFD029 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		04108ADD19B4709800FFD029 /* GameBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBoardViewController.h; sourceTree = "<group>"; };
 		04108ADE19B4709800FFD029 /* GameBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardViewController.m; sourceTree = "<group>"; };
+		04108AE119B471DE00FFD029 /* DatabaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseController.h; sourceTree = "<group>"; };
+		04108AE219B471DE00FFD029 /* DatabaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseController.m; sourceTree = "<group>"; };
 		046FFD3D19B45DF4003A5311 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		046FFD3E19B45DF4003A5311 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		04A548E119B458F90050067D /* ColourMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColourMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +174,15 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		04108AE019B4716100FFD029 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04108AE119B471DE00FFD029 /* DatabaseController.h */,
+				04108AE219B471DE00FFD029 /* DatabaseController.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		04A548D819B458F90050067D = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +217,7 @@
 		04A548EA19B458F90050067D /* ColourMemory */ = {
 			isa = PBXGroup;
 			children = (
+				04108AE019B4716100FFD029 /* Model */,
 				04108AD719B46BFB00FFD029 /* Utils */,
 				04A5491919B459C20050067D /* Assets */,
 				04A548F319B458F90050067D /* AppDelegate.h */,
@@ -435,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04108AE319B471DE00FFD029 /* DatabaseController.m in Sources */,
 				04A548FB19B458F90050067D /* ViewController.m in Sources */,
 				04108ADF19B4709800FFD029 /* GameBoardViewController.m in Sources */,
 				04A548F519B458F90050067D /* AppDelegate.m in Sources */,
